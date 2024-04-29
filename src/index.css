@@ -1,0 +1,371 @@
+/* Reset some basic styling */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #fafafa;
+  color: #262626;
+  line-height: 1.6;
+}
+
+/* Apply a natural box layout model to all elements */
+html {
+  box-sizing: border-box;
+}
+
+/* Main root container */
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  width: 100%;
+  /* Background image properties */
+  background-image: url('/images/octagon-image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.left-side, .right-side {
+  flex: 1;
+  /* Style for the left and right sides */
+
+}
+
+.center-content {
+  flex: 2;
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  padding: 20px;
+  /* Additional styles for the center content */
+}
+/* Header styles */
+.header {
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #dbdbdb;
+  padding: 12px 0;
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Navigation Link styles */
+.nav-link {
+  text-decoration: none;
+  color: #262626;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  background-color: #f0f0f0;
+}
+
+/* Main content area */
+.main-content {
+  padding-top: 70px; /* Offset for header */
+  width: 100%;
+  max-width: 935px;
+  margin: auto;
+}
+
+/* Post list styles */
+.post-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 20px 0;
+}
+
+/* Individual post styles */
+.post {
+  background-color: rgba(7, 7, 7, 0.95); /* Light background color */
+  border: 1px solid #000000; /* Border style */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Padding inside the box */
+  margin-bottom: 20px; /* Space between each post */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+}
+
+.post-box {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 15px; /* Space between posts */
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.upvote-counter {
+  float: left; /* or flexbox could be used for modern layouts */
+  margin-right: 10px;
+  color: #333;
+  /* Additional styling for the counter */
+}
+
+.post-header {
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.post-image {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.post-content {
+  padding: 16px;
+}
+
+.post-actions {
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #dbdbdb;
+}
+
+.post-like,
+.post-comment {
+  border: none;
+  background: transparent;
+  padding: 8px;
+  cursor: pointer;
+}
+
+/* Utility classes */
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #0095f6;
+  color: #ffffff;
+  text-align: center;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  background-color: #b2dffc;
+}
+
+.btn:hover:not(:disabled),
+.btn:focus {
+  background-color: #0077b5;
+}
+
+/* Search and sort container */
+.search-sort-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  margin-top: 20px;
+}
+
+/* Search input styles */
+.search-input {
+  flex: 1;
+  margin-right: 8px;
+  padding: 8px 16px;
+  background: #f0f0f0;
+  border: 1px solid #dbdbdb;
+  border-radius: 6px;
+}
+
+/* Dropdown styles */
+.sort-dropdown {
+  padding: 8px 16px;
+  background: #f0f0f0;
+  border: 1px solid #dbdbdb;
+  border-radius: 6px;
+}
+
+.post-page .center-content {
+  background-color: #ffffff; /* Sets background color to white */
+  padding: 20px; /* Adds padding inside the container */
+  margin: auto; /* Centers the container, if necessary */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: Adds subtle shadow for depth */
+  max-width: 800px; /* Optional: Limits the width of the container */
+}
+
+/* Styles for CreateNewPost form */
+.create-post-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+input[type="text"], textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  box-sizing: border-box; /* Makes sure padding doesn't affect width */
+}
+
+button {
+  padding: 10px 15px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.create-post-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 70px); /* Adjust height based on your header size */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.create-post-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px; /* Adjust the max width as needed */
+}
+
+.create-post-container h1 {
+  margin-bottom: 20px;
+}
+
+.create-post-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.create-post-container .form-group {
+  margin-bottom: 20px;
+}
+
+.create-post-container .form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.create-post-container .form-group input[type="text"],
+.create-post-container .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.create-post-container .form-group textarea {
+  height: 100px; /* Adjust the height as needed */
+}
+
+.create-post-container button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.create-post-container button:hover {
+  background-color: #0056b3;
+}
+.header {
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ background-color: #333; /* Change the background color to your preference */
+ color: #fff; /* Change the text color to your preference */
+ padding: 10px 20px;
+ z-index: 1000; /* Ensure the header appears above other content */
+}
+
+/* PostPage styles */
+.post-page #root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #fafafa; /* Set background color */
+}
+
+.post-page .center-content {
+  background-color: #ffffff; /* Sets background color to white */
+  padding: 20px; /* Adds padding inside the container */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: Adds subtle shadow for depth */
+  max-width: 800px; /* Optional: Limits the width of the container */
+}
+
+/* Remove the header styles for PostPage */
+.post-page .header {
+  display: none; /* Hide the header in PostPage */
+}
+
+.btn-home {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #007bff; /* Use the same blue color as the "Create New Post" button */
+  color: #ffffff;
+  text-align: center;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-home:hover:not(:disabled),
+.btn-home:focus {
+  background-color: #0056b3; /* Darker shade of blue on hover or focus */
+}
+
+.btn-home, .btn-create-post {
+  display: inline-block;
+  padding: 8px 16px; /* Adjust padding as needed */
+  background-color: #007bff; /* Use the same blue color as the "Create New Post" button */
+  color: #ffffff;
+  text-align: center;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px; /* Adjust font size as needed */
+}
+
+.btn-home:hover:not(:disabled),
+.btn-home:focus,
+.btn-create-post:hover:not(:disabled),
+.btn-create-post:focus {
+  background-color: #0056b3; /* Darker shade of blue on hover or focus */
+}

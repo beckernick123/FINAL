@@ -1,0 +1,8 @@
+.post-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Additional styling for left-side, center-content, and right-side if needed */
