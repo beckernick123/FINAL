@@ -20,7 +20,7 @@ const PostItem = ({ post }) => {
                     <p className="post-content">{post.content}</p>
                     {/* Comments section */}
                     <div className="post-comments">
-                        <h4>Comments:</h4>
+                        <h4></h4>
                         {post.comments && post.comments.length > 0 ? (
                             post.comments.map((comment, index) => (
                                 <div key={index} className="comment">
@@ -31,7 +31,7 @@ const PostItem = ({ post }) => {
                                 </div>
                             ))
                         ) : (
-                            <p>No comments yet</p>
+                            <p></p>
                         )}
                     </div>
                 </div>

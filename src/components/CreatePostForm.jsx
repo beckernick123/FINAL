@@ -49,7 +49,7 @@ const CreatePostForm = () => {
                 />
             </div>
             <div className="form-group">
-                <label htmlFor="imageUrl">Image URL:</label>
+                <label htmlFor="imageUrl">Image URL/:</label>
                 <input
                     className="form-input"
                     type="url"

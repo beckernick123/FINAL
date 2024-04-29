@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import supabase from '../supabaseClient'; // make sure this path is correct for your setup
 
 function CreateNewPost() {
     const [postData, setPostData] = useState({
         title: '',
         content: '',
-        imageUrl: '', // Adding an image URL field
+        imageUrl: '',
     });
     const navigate = useNavigate();
 
@@ -17,11 +18,27 @@ function CreateNewPost() {
         }));
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log("Submitting post:", postData);
-        // Here you would typically handle the post request to your backend
-        navigate('/'); // Navigate to the home page or post list page after submitting
+        
+        const { title, content, imageUrl } = postData;
+        
+        // Call the Supabase API to insert the new post data
+        const { data, error } = await supabase
+            .from('posts') // Make sure this matches your table name
+            .insert([{
+                title,
+                content,
+                image_url: imageUrl, // Ensure this matches your column names
+                // You might want to set other fields like author_id, depending on your app's logic
+            }]);
+
+        if (error) {
+            console.error('Error submitting post:', error);
+        } else {
+            console.log('New post created:', data);
+            navigate('/'); // Navigate to the home page or post list page after submitting
+        }
     };
 
     return (
@@ -50,7 +67,7 @@ function CreateNewPost() {
                         />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="image-url">Image URL (Optional)</label>
+                        <label htmlFor="image-url">Image URL / MP4 URL (Optional)</label>
                         <input
                             type="text"
                             id="image-url"
